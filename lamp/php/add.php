@@ -36,7 +36,7 @@ if ($conn->connect_error) {
 }
 
 // SQL OPPERATIONS
-$sql = "INSERT INTO randuser VALUES ('$firstname')";
+$sql = "INSERT INTO users VALUES ('$firstname')";
 
 if ($conn->query($sql) === TRUE) {
   echo "New record created successfully";
@@ -44,7 +44,7 @@ if ($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$results = query("SELECT * FROM
+$results = query("SELECT * FROM users")
 
 $conn->close();
 
