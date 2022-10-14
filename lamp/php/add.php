@@ -44,7 +44,18 @@ if ($conn->query($sql) === TRUE) {
   echo "Error: " . $sql . "<br>" . $conn->error;
 }
 
-$results = query("SELECT * FROM users")
+$results = $conn->query("SELECT * FROM users")
+
+if ($result->num_rows > 0) {
+  echo "<table><tr><th>ID</th><th>Name</th></tr>";
+  // output data of each row
+  while($row = $result->fetch_assoc()) {
+    echo "<tr><td>".$row["id"]."</td><td>".$row["firstName"]." ".$row["lastName"]."</td></tr>";
+  }
+  echo "</table>";
+} else {
+  echo "0 results";
+}
 
 $conn->close();
 
