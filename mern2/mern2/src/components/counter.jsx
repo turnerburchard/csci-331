@@ -1,17 +1,17 @@
 import React from "react";
 
-function Counter() {
+function Counter(props) {
     const [count, setCount] = React.useState(0);
 
     function handleClick(){
-        setCount(count+1)
+        setCount(count+props.increment)
     }
 
     return(
         <div>
             <hr />
             <h3>{count}</h3>
-            <button onClick={handleClick}>+1</button>
+            <button onClick={handleClick}>+{props.increment}</button>
         </div>
     )
 }

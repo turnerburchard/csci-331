@@ -7,8 +7,8 @@ function App() {
     <div>
         <h1>Turner's React App</h1>
         <h2>Running on Port 5058</h2>
-        <Counter />
-        <Counter />
+        <Counter increment={1}/>
+        <Counter increment={7687687970}/>
         <Github />
 
 
